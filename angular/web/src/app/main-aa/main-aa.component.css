@@ -1,0 +1,47 @@
+.custom-breadcrumb {
+    margin: 0;
+}
+
+
+.contentContainer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+p-card {
+    padding-top: 20px;
+    height: 20% !important;
+}
+
+p-card .p {
+    height: 20% !important;
+}
+
+.label {
+    font-size: 100%;
+}
+
+.label-half {
+    font-size: 150%;
+}
+
+.label-two {
+    font-size: 200%;
+}
+
+.welcome {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 140px !important;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

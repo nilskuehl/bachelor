@@ -1,0 +1,108 @@
+<div class="welcome">
+    <h1 [ngStyle]="{ 'color': foreground, 'background-color': background  }" tabindex="0">Welcome</h1>
+    <h2 [ngStyle]="{ 'color': foreground, 'background-color': background  }" tabindex="0">Home Level AAA</h2>
+</div>
+<div class="contentContainer" aria-label="Copntaine with content cards inside">
+    <p-card (click)="handleClick('/sub/AAA')" (keydown)="handleKeyDown($event, '/sub/A')" tabindex="0"
+        [style]="{ width: '360px' }">
+        <ng-template alt="picture" pTemplate="header">
+            <img alt="topic card" src="../../assets/gordonPlant.jpg" />
+        </ng-template>
+        <h3 [ngStyle]="{ 'color': foreground, 'background-color': background  }"
+            [ngClass]="{'h-one' : size == 'size1','h-half' : size == 'size15', 'h-two' : size == 'size2' }">
+            Sustainability</h3>
+        <p [ngStyle]="{ 'color': foreground, 'background-color': background  }"
+            [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+            very
+            Interesting</p>
+        <p [ngStyle]="{ 'color': foreground, 'background-color': background  }"
+            [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+            Get ready to be astounded by this article that defies all boundaries, captivating readers with its
+            astonishing depth and
+            extraordinary eloquence. Its brilliance knows no bounds, making it an absolute must-read.
+        </p>
+
+    </p-card>
+    <p-card aria-label="Card with content" (click)="handleClick('/sub/A')" (keydown)="handleKeyDown($event, '/sub/A')"
+        tabindex="0" [style]="{ width: '360px' }">
+        <ng-template pTemplate="header">
+            <img alt="topic card" src="../../assets/pexels-chris-hepworth-16047549.jpg" />
+        </ng-template>
+        <h3 [ngStyle]="{ 'color': foreground, 'background-color': background  }"
+            [ngClass]="{'h-one' : size == 'size1','h-half' : size == 'size15', 'h-two' : size == 'size2' }">
+            Seaturtles</h3>
+        <p [ngStyle]="{ 'color': foreground, 'background-color': background  }"
+            [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+            very
+            Interesting</p>
+        <p [ngStyle]="{ 'color': foreground, 'background-color': background  }"
+            [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+            This article is an absolute marvel, surpassing all expectations with its sheer brilliance and captivating
+            narrative.
+            It's a testament to the author's unparalleled talent and ability to leave readers in awe.
+        </p>
+
+    </p-card>
+    <p-card aria-label="Card with content" (click)="handleClick('/sub/A')" (keydown)="handleKeyDown($event, '/sub/A')"
+        tabindex="0" [style]="{ width: '360px' }">
+        <ng-template pTemplate="header">
+            <img alt="topic card" src="../../assets/pexels-stijn-dijkstra-16747506 (1).jpg" />
+        </ng-template>
+        <h3 [ngStyle]="{ 'color': foreground, 'background-color': background  }"
+            [ngClass]="{'h-one' : size == 'size1','h-half' : size == 'size15', 'h-two' : size == 'size2' }">
+            Technology</h3>
+        <p [ngStyle]="{ 'color': foreground, 'background-color': background  }"
+            [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+            very
+            Interesting</p>
+        <p [ngStyle]="{ 'color': foreground, 'background-color': background  }"
+            [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+            Prepare to be blown away by this extraordinary article that radiates with an unmatched level of greatness.
+            Its profound
+            impact will resonate within you, leaving an indelible mark on your mind and heart.
+        </p>
+
+    </p-card>
+    <p-card aria-label="Card with content" (click)="handleClick('/sub/A')" (keydown)="handleKeyDown($event, '/sub/A')"
+        tabindex="0" [style]="{ width: '360px' }">
+        <ng-template pTemplate="header">
+            <img alt="topic card" src="../../assets/pexels-josh-withers-16978839.jpg" />
+        </ng-template>
+        <h3 [ngStyle]="{ 'color': foreground, 'background-color': background  }"
+            [ngClass]="{'h-one' : size == 'size1','h-half' : size == 'size15', 'h-two' : size == 'size2' }">
+            Underground</h3>
+        <p [ngStyle]="{ 'color': foreground, 'background-color': background  }"
+            [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+            very
+            Interesting</p>
+        <p [ngStyle]="{ 'color': foreground, 'background-color': background  }"
+            [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+            Brace yourself for an unparalleled reading experience as you delve into this remarkable article, where every
+            word dances
+            on the page and ignites a fire within your soul. extraordinary power will leave you
+            breathless.
+        </p>
+
+    </p-card>
+    <p-card aria-label="Card with content" (click)="handleClick('/sub/A')" (keydown)="handleKeyDown($event, '/sub/A')"
+        tabindex="0" [style]="{ width: '360px' }">
+        <ng-template pTemplate="header">
+            <img alt="Card" src="../../assets/pexels-christyn-reyes-13458334.jpg" />
+        </ng-template>
+        <h3 [ngStyle]="{ 'color': foreground, 'background-color': background  }"
+            [ngClass]="{'h-one' : size == 'size1','h-half' : size == 'size15', 'h-two' : size == 'size2' }">
+            Animals</h3>
+        <p [ngStyle]="{ 'color': foreground, 'background-color': background  }"
+            [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+            very
+            Interesting</p>
+        <p [ngStyle]="{ 'color': foreground, 'background-color': background  }"
+            [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+            Hold on tight as you embark on a journey through the pages of this awe-inspiring article that shines with a
+            brilliance
+            unmatched by anything you've ever encountered. Its words possess power that will hold you captive.
+        </p>
+
+    </p-card>
+
+</div>

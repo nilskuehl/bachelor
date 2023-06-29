@@ -1,0 +1,76 @@
+.custom-breadcrumb {
+    margin: 0;
+}
+
+.contentContainer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+p-card {
+    padding-top: 20px;
+
+}
+
+p-card:focus,
+p-card:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    outline-color: transparent !important;
+    outline-style: none !important;
+    border: none !important;
+}
+
+.h-one {
+    font-size: 26px !important;
+}
+
+.h-half {
+    font-size: 39px !important;
+}
+
+.h-two {
+    font-size: 52px !important;
+}
+
+
+.label {
+    font-size: 100%;
+}
+
+.label-half {
+    font-size: 150%;
+}
+
+.label-two {
+    font-size: 200%;
+}
+
+.headerClass-one {
+    font-size: 100%;
+}
+
+.headerClass-half {
+    font-size: 150%;
+}
+
+.headerClass-two {
+    font-size: 200%;
+}
+
+.welcome {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 140px !important;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

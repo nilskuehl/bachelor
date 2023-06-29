@@ -1,0 +1,59 @@
+<div class="contentContainer">
+    <p-card (click)="handleClick('/content/A')" (keydown)="handleKeyDown($event, '/content/AA')" tabindex="0"
+        [style]="{ width: '360px' }">
+        <ng-template pTemplate="header">
+            <img alt="topic card" src="../../assets/pexels-chris-hepworth-16047549.jpg" />
+        </ng-template>
+        <h3 [ngClass]="{'h-one' : size == 'size1','h-half' : size == 'size15', 'h-two' : size == 'size2' }">
+            Subtopic 1</h3>
+        <p [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">very
+            Interesting</p>
+        <p [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
+            numquam
+            deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse,
+            cupiditate
+            neque
+            quas!
+        </p>
+
+    </p-card>
+    <p-card (click)="handleClick('/content/A')" (keydown)="handleKeyDown($event, '/content/A')" tabindex="0"
+        [style]="{ width: '360px' }">
+        <ng-template pTemplate="header">
+            <img alt="picture card" src="../../assets/pexels-stijn-dijkstra-16747506 (1).jpg" />
+        </ng-template>
+        <h3 [ngClass]="{'h-one' : size == 'size1','h-half' : size == 'size15', 'h-two' : size == 'size2' }">
+            Subtopic 2</h3>
+        <p [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">very
+            Interesting</p>
+        <p [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
+            numquam
+            deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse,
+            cupiditate
+            neque
+            quas!
+        </p>
+
+    </p-card>
+    <p-card (click)="handleClick('/content/A')" (keydown)="handleKeyDown($event, '/content/A')" tabindex="0"
+        [style]="{ width: '360px' }">
+        <ng-template pTemplate="header">
+            <img alt="topic card" src="../../assets/pexels-josh-withers-16978839.jpg" />
+        </ng-template>
+        <h3 [ngClass]="{'h-one' : size == 'size1','h-half' : size == 'size15', 'h-two' : size == 'size2' }">
+            Subtopic 3</h3>
+        <p [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">very
+            Interesting</p>
+        <p [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
+            numquam
+            deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse,
+            cupiditate
+            neque
+            quas!
+        </p>
+
+    </p-card>
+</div>

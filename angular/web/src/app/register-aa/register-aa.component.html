@@ -1,0 +1,93 @@
+<h1>Register Level AA</h1>
+<div class="center">
+    <div class="p-fluid" id="form">
+        <div class="col-2">
+            <label for="firstName"
+                [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">Fistname:</label>
+            <label *ngIf="!firstNameExists"
+                [ngClass]="{'error-required': size == 'size1', 'error-required-two' : size == 'size2', 'error-required-half' : size == 'size15' }">*
+                field is required</label>
+            <div class="col w-full">
+                <input [attr.aria-required]="true" [attr.aria-invalid]="!firstNameExists" (ngModelChange)="checkName()"
+                    id="firstName" aria-label="input firstName" pInputText type="text" [(ngModel)]="firstName" />
+            </div>
+        </div>
+
+        <div class="col-2">
+            <label for="lastName"
+                [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+                Lastname:</label>
+            <label *ngIf="!lastNameExistst"
+                [ngClass]="{'error-required': size == 'size1', 'error-required-two' : size == 'size2', 'error-required-half' : size == 'size15' }">*
+                field is required</label>
+            <div>
+                <input [attr.aria-required]="true" [attr.aria-invalid]="!lastNameExistst" (ngModelChange)="checkName()"
+                    id="lastName" aria-label="input lastName" pInputText type="text" [(ngModel)]="lastName" />
+            </div>
+        </div>
+
+        <div class="col-2">
+            <label for="email"
+                [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">E-Mail:</label>
+            <label *ngIf="!email"
+                [ngClass]="{'error-required': size == 'size1', 'error-required-two' : size == 'size2', 'error-required-half' : size == 'size15' }">*
+                field is required </label>
+            <div>
+                <input [attr.aria-required]="true" [attr.aria-invalid]="!emailValid" pInputText id="email"
+                    (change)="checkEmailValid(email)" aria-label="input email" pInputText type="email"
+                    [(ngModel)]="email" />
+            </div>
+            <label *ngIf="!emailValid"
+                [ngClass]="{'error-suggestion-one' : size == 'size1', 'error-suggestion-half' : size == 'size15', 'error-suggestion-two' : size == 'size2', }">email
+                must be @hft.de</label>
+        </div>
+
+        <div class="col-2">
+            <label for="email"
+                [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">Username:</label>
+            <label *ngIf="!userNameExistst"
+                [ngClass]="{'error-required': size == 'size1', 'error-required-two' : size == 'size2', 'error-required-half' : size == 'size15' }">*
+                field is required</label>
+            <div>
+                <input [attr.aria-required]="true" [attr.aria-invalid]="!userNameExistst" (ngModelChange)="checkName()"
+                    id="username" aria-label="input username" pInputText type="username" [(ngModel)]="username" />
+            </div>
+        </div>
+
+        <div class="col-2" tabindex="-1">
+            <label for="birthday"
+                [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">Birthday:</label>
+            <label *ngIf="!isAdult"
+                [ngClass]="{'error-required': size == 'size1', 'error-required-two' : size == 'size2', 'error-required-half' : size == 'size15' }">*
+                field is required</label>
+            <div>
+                <p-calendar
+                    [ngClass]="{'calendar-one': size === 'size1', 'calendar-half': size === 'size15', 'calendar-two': size === 'size2'}"
+                    [attr.aria-required]="true" [attr.aria-invalid]="!isAdult" (onSelect)="checkAge(birthday)"
+                    #myCalendar aria-label="input birthday" name="date" [(ngModel)]="birthday"
+                    [showIcon]="true"></p-calendar>
+            </div>
+            <label *ngIf="!emailValid"
+                [ngClass]="{'error-suggestion-one' : size == 'size1', 'error-suggestion-half' : size == 'size15', 'error-suggestion-two' : size == 'size2', }">must
+                be 18 years old</label>
+        </div>
+
+        <label
+            [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">*
+            red marked fields are required</label>
+
+        <div class="buttoncontainer">
+            <div class="left">
+                <p-button
+                    [ngClass]="{'button-one' : size == 'size1', 'button-half' : size == 'size15', 'button-two' : size == 'size2', }"
+                    pRipple aria-label="submit register form" [disabled]="!validated" label="Submit"></p-button>
+            </div>
+            <div class="right">
+                <a href="/"><p-button
+                        [ngClass]="{'button-one' : size == 'size1', 'button-half' : size == 'size15', 'button-two' : size == 'size2', }"
+                        router-l aria-label="cancel register form" label="Cancel"></p-button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

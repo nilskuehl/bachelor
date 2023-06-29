@@ -1,0 +1,194 @@
+.center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+}
+
+*:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+#form {
+    width: 30rem;
+    height: 39rem;
+}
+
+#form .col-2 {
+    padding: 7px;
+    width: 100%;
+}
+
+
+.submit {
+    background-color: rgba(0, 123, 255);
+}
+
+
+.buttoncontainer * {
+    padding-top: 30px;
+    overflow: auto !important;
+}
+
+.left {
+    padding: 7px;
+    width: 45%;
+    float: left !important;
+}
+
+.right {
+    padding: 7px;
+    width: 45%;
+    float: right !important;
+}
+
+
+.p-inputtext:focus,
+.p-inputtext:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    outline-color: transparent !important;
+    outline-style: none !important;
+    border: 1px solid lightgray !important;
+}
+
+.buttoncontainer *:focus,
+.buttoncontainer *:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    outline-color: transparent !important;
+    outline-style: none !important;
+    border: 1px solid lightgray !important;
+}
+
+.p-calendar:focus,
+.p-calendar:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    outline-color: transparent !important;
+    outline-style: none !important;
+    border: 1px solid lightgray !important;
+}
+
+input:hover {
+    outline: none !important;
+    box-shadow: none !important;
+    outline-color: transparent !important;
+    outline-style: none !important;
+    border: 1px solid lightgray !important;
+}
+
+*:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    outline-color: transparent !important;
+    outline-style: none !important;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    :focus:not(:focus-visible) {
+        outline: none !important;
+    }
+}
+
+.error-required {
+    color: red;
+}
+
+.error-required {
+    color: red;
+    float: right;
+}
+
+.error-required-half {
+    color: red;
+    float: right;
+    font-size: 150%;
+}
+
+.error-required-two {
+    color: red;
+    float: right;
+    font-size: 200%;
+}
+
+.label {
+    font-size: 100%;
+}
+
+.label-half {
+    font-size: 150%;
+}
+
+.label-two {
+    font-size: 200%;
+}
+
+.button-one {
+    font-size: 100% !important;
+}
+
+.button-half {
+    font-size: 150% !important;
+}
+
+.button-two {
+    font-size: 200% !important;
+}
+
+.error-suggestion-one {
+    color: red;
+    padding-left: 5px;
+}
+
+.error-suggestion-half {
+    color: red;
+    padding-left: 5px;
+    font-size: 150%;
+}
+
+.error-suggestion-two {
+    color: red;
+    padding-left: 5px;
+    font-size: 200%;
+}
+
+.p-input-one {
+    font-size: 100% !important;
+    width: 100%;
+}
+
+.p-input-half {
+    font-size: 150% !important;
+    width: 150%;
+}
+
+.p-input-two {
+    font-size: 200% !important;
+}
+
+:host ::ng-deep .calendar-one .p-calendar .p-inputtext {
+    font-size: 100% !important;
+}
+
+:host ::ng-deep .calendar-half .p-calendar .p-inputtext {
+    font-size: 150% !important;
+}
+
+:host ::ng-deep .calendar-two .p-calendar .p-inputtext {
+    font-size: 200% !important;
+}
+
+:host ::ng-deep .button-one .p-button {
+    font-size: 100% !important;
+}
+
+:host ::ng-deep .button-half .p-button {
+    font-size: 150% !important;
+}
+
+:host ::ng-deep .button-two .p-button {
+    font-size: 200% !important;
+}
