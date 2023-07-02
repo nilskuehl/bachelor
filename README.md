@@ -10,6 +10,8 @@ npm run start
 
 ```
 
+or
+
 ```console
 cd react
 cd web
@@ -17,3 +19,4 @@ npm install
 npm run start
 
 ```
+
