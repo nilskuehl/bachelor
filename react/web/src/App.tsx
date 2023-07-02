@@ -153,7 +153,7 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <header>
-        <h2>Accessibility Test</h2>
+        <h3>Accessibility Test</h3>
         <nav className="navbar">
           <ul className="navLinks">
             <li><a tabIndex={1} target="_self" onKeyDown={(e) => e.key === 'Enter' ? navigate('/home/' + currentLevel) : null} onClick={() => navigate('/home/' + currentLevel)}>Home</a></li>

@@ -55,7 +55,7 @@ const ContentAAA: React.FC<ContentAAAProps> = ({ animated, size, level, service,
         <div className="center">
 
             <div className="about">
-                <h2 lang='eng'>Very Interesting Article</h2>
+                <h2 lang='eng' style={{ color: foreground, backgroundColor: background }}>Very Interesting Article</h2>
                 <p lang="eng" style={{ color: foreground, backgroundColor: background }}
                     className={`${size === 'size1' ? 'about' : size === 'size2' ? 'about-two' : 'about-half'}`}>
                     This Website is supposed to be an Implementation test of the WCAG 2.1 Guideline
