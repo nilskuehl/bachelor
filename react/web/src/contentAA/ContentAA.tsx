@@ -31,7 +31,7 @@ const ContentAA: React.FC<ContentAAProps> = ({ size, level, service, foreground,
 
             <div className="about">
                 <h2 lang='eng'>Very Interesting Article</h2>
-                <p lang="eng" style={{ color: foreground, backgroundColor: background }}
+                <p
                     className={`${size === 'size1' ? 'about' : size === 'size2' ? 'about-two' : 'about-half'}`}>
                     This Website is supposed to be an Implementation test of the WCAG 2.1 Guideline
                     It is structured as 3 in 1 Website. This means there are 3 versions of every Component and workflow.

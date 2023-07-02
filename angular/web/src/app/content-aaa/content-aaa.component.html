@@ -1,7 +1,7 @@
 <div class="center">
     <div class="about">
-        <h2>About this website</h2>
-        <p lang="eng"
+        <h2 [ngStyle]="{ 'color': foreground, 'background-color': background  }">About this website</h2>
+        <p lang="eng" [ngStyle]="{ 'color': foreground, 'background-color': background  }"
             [ngClass]="{'about' : size == 'size1', 'about-half' : size == 'size15', 'about-two' : size == 'size2' }">
             This Website is supposed to be an Implementation test of the WCAG 2.1 Guideline
             It is structured as 3 in 1 Website. This means there are 3 versions of every Component and workflow.
