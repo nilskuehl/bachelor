@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../service/data.service';
 import { LocationService } from '../service/location.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-aa',
@@ -24,7 +25,7 @@ export class RegisterAAComponent implements OnInit {
 
   size: string;
 
-  constructor(private data: DataService, private location: LocationService) {
+  constructor(private data: DataService, private location: LocationService, private router: Router) {
     this.firstName = '';
     this.lastName = '';
     this.username = '';
@@ -35,6 +36,11 @@ export class RegisterAAComponent implements OnInit {
   ngOnInit(): void {
     this.data.currentMessage.subscribe(message => this.size = message);
     this.location.currentLocation = 'register';
+    document.title = "Register Level AA"
+    document.documentElement.lang = 'en'
+    this.data.changeLevel('AA');
+
+
   }
 
   validate(): boolean {
@@ -88,13 +94,7 @@ export class RegisterAAComponent implements OnInit {
     this.validate()
   }
 
-  onSubmit() {
-    // Hier kannst du die Registrierungslogik implementieren
-    // Zum Beispiel: Senden der Daten an einen Server
-    console.log('Form submitted!');
-    console.log('Vorname:', this.firstName);
-    console.log('Nachname:', this.lastName);
-    console.log('E-Mail:', this.email);
-    console.log('Geburtstag:', this.birthday);
+  onSubmit(url: string) {
+    this.router.navigate([url])
   }
 }

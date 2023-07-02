@@ -16,10 +16,14 @@ export class SubContentComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.data.currentMessage.subscribe(message => this.size = message)
-    this.location.currentLocation = 'main';
+    this.location.currentLocation = 'sub';
     this.menuHome = { icon: "pi pi-home" }
     this.location.appendMenu(this.menuItem);
     this.menuItems = this.location.breadcrumbLocation;
+    document.title = "Subcontent Level A"
+    document.documentElement.lang = 'en'
+    this.data.changeLevel('A');
+
   }
 
   ngOnDestroy(): void {

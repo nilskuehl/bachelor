@@ -36,15 +36,19 @@ p-card:focus-visible {
 
 
 .label {
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
+    line-height: 1.5;
 }
 
 .label-half {
     font-size: 150%;
+    line-height: 1.5;
 }
 
 .label-two {
     font-size: 200%;
+    line-height: 1.5;
 }
 
 .headerClass-one {

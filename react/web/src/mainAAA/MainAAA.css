@@ -7,7 +7,22 @@
     justify-content: space-evenly;
     flex-direction: row;
     flex-wrap: wrap;
+    flex: 1;
 }
+
+
+.para-one:focus,
+.para-one:focus-visible {
+    border: 2px solid blueviolet;
+    outline: 2px solid blueviolet;
+}
+
+.pip:focus,
+.ppip:focus-visible {
+    border: 2px solid blueviolet;
+    outline: 2px solid blueviolet;
+}
+
 
 .card {
     padding-top: 20px;
@@ -27,11 +42,15 @@
 .p-card-content .para-half {
     font-size: 150% !important;
     text-align: left !important;
+    letter-spacing: .12rem;
+    word-spacing: .16rem;
 }
 
 .p-card-content .para-two {
     font-size: 200% !important;
     text-align: left !important;
+    letter-spacing: .12rem;
+    word-spacing: .16rem;
 }
 
 .card .p {

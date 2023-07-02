@@ -1,0 +1,74 @@
+.custom-breadcrumb {
+    margin: 0;
+}
+
+.contentContainer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 20% !important;
+    width: 360px;
+    justify-content: left;
+    text-align: left !important;
+}
+
+.p-card-content .para-one {
+    font-size: 100%;
+    text-align: left !important;
+}
+
+.p-card-content .para-half {
+    font-size: 150% !important;
+    text-align: left !important;
+}
+
+.p-card-content .para-two {
+    font-size: 200% !important;
+    text-align: left !important;
+}
+
+.card .p {
+    height: 20% !important;
+    text-align: left !important;
+}
+
+.pip:focus,
+.ppip:focus-visible {
+    border: 2px solid blueviolet;
+    outline: 2px solid blueviolet;
+}
+
+.label {
+    font-size: 100%;
+}
+
+.label-half {
+    font-size: 150%;
+}
+
+.label-two {
+    font-size: 200%;
+}
+
+.welcome {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+h1 {
+    font-size: 140px !important;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

@@ -3,6 +3,7 @@ import { MenuItem } from "primeng/api";
 import { DataService } from './service/data.service';
 import { LocationService } from './service/location.service';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -21,10 +22,11 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.location.currentBc.subscribe(bc => {
       this.menuItems = bc;
     })
+    this.data.currentAnimation.subscribe(an => this.animation = an)
   }
 
 
-  constructor(private data: DataService, private location: LocationService, private changeDetectorRef: ChangeDetectorRef) {
+  constructor(private data: DataService, private location: LocationService, private changeDetectorRef: ChangeDetectorRef, private router: Router) {
   }
 
   ngAfterViewInit(): void {
@@ -43,6 +45,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   background: string = "#ffffff";
   level: string;
 
+  animation: boolean = true;
+
   path: string = '';
   isRegister = this.location.isRegister;
 
@@ -56,15 +60,21 @@ export class AppComponent implements OnInit, AfterViewInit {
     { label: 'Level AA', tabindex: "1", target: "_self" },
     { label: 'Level AAA', tabindex: "1", target: "_self" },
     { separator: true },
-    { label: 'Font size up 50%', command: () => this.upSize(), tabindex: "1" },
-    { label: 'Font size down 50%', command: () => this.downSize(), tabindex: "1" },
-
+    { label: 'Font size up', command: () => this.upSize(), tabindex: "1" },
+    { label: 'Font size down', command: () => this.downSize(), tabindex: "1" },
+    { separator: true },
+    { label: 'Start/Stop Animations', command: () => this.anim(), tabindex: "1" },
   ]
 
+
+  anim(): void {
+    this.data.changeAnimation(!this.animation);
+  }
+
   getCurrentLocation(): void {
-    this.items[0].url = this.location.currentLocation + '/A';
-    this.items[1].url = this.location.currentLocation + '/AA';
-    this.items[2].url = this.location.currentLocation + '/AAA';
+    this.items[0].command = () => this.router.navigate([this.location.currentLocation + '/A']);
+    this.items[1].command = () => this.router.navigate([this.location.currentLocation + '/AA']);
+    this.items[2].command = () => this.router.navigate([this.location.currentLocation + '/AAA']);
   }
 
   changeForeground(): void {

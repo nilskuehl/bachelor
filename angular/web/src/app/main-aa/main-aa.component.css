@@ -2,7 +2,6 @@
     margin: 0;
 }
 
-
 .contentContainer {
     display: flex;
     justify-content: space-evenly;
@@ -11,22 +10,54 @@
 
 p-card {
     padding-top: 20px;
-    height: 20% !important;
+
 }
 
-p-card .p {
-    height: 20% !important;
+
+.h-one {
+    font-size: 26px !important;
 }
+
+.h-half {
+    font-size: 39px !important;
+}
+
+.h-two {
+    font-size: 52px !important;
+}
+
 
 .label {
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
+    line-height: 1.5;
+    letter-spacing: .16rem;
+    word-spacing: .12rem;
 }
 
 .label-half {
     font-size: 150%;
+    line-height: 1.5;
+    letter-spacing: .16rem;
+    word-spacing: .12rem;
 }
 
 .label-two {
+    font-size: 200%;
+    line-height: 1.5;
+    letter-spacing: .16rem;
+    word-spacing: .12rem;
+}
+
+.headerClass-one {
+    font-size: 100%;
+}
+
+.headerClass-half {
+    font-size: 150%;
+}
+
+.headerClass-two {
     font-size: 200%;
 }
 
@@ -44,4 +75,11 @@ h1 {
 
 h2 {
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+p {
+    line-height: 1.5;
+    max-width: 80ch;
+    word-wrap: break-word;
+    hyphens: auto;
 }

@@ -12,6 +12,7 @@ import { ContentAAAComponent } from './content-aaa/content-aaa.component';
 import { SubContentComponent } from './sub-content/sub-content.component';
 import { SubContentAAComponent } from './sub-content-aa/sub-content-aa.component';
 import { SubContentAAAComponent } from './sub-content-aaa/sub-content-aaa.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main/A', pathMatch: 'full' },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'sub/A', component: SubContentComponent },
   { path: 'sub/AA', component: SubContentAAComponent },
   { path: 'sub/AAA', component: SubContentAAAComponent },
+  { path: 'about', component: AboutComponent },
 ];
 
 @NgModule({

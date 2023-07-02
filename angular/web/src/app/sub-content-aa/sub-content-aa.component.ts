@@ -15,10 +15,15 @@ export class SubContentAAComponent {
 
   ngOnInit(): void {
     this.data.currentMessage.subscribe(message => this.size = message)
-    this.location.currentLocation = 'main';
+    this.location.currentLocation = 'sub';
     this.menuHome = { icon: "pi pi-home" }
     this.location.appendMenu(this.menuItem);
     this.menuItems = this.location.breadcrumbLocation;
+    document.title = "Subcontent Level AA"
+    document.documentElement.lang = 'en'
+    this.data.changeLevel('AA');
+
+
   }
 
   ngOnDestroy(): void {

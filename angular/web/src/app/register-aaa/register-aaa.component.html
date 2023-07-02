@@ -8,8 +8,9 @@
                 [ngClass]="{'error-required': size == 'size1', 'error-required-two' : size == 'size2', 'error-required-half' : size == 'size15' }">*
                 field is required</label>
             <div class="col w-full">
-                <input [attr.aria-required]="true" [attr.aria-invalid]="!firstNameExists" (ngModelChange)="checkName()"
-                    id="firstName" aria-label="input firstName" pInputText type="text" [(ngModel)]="firstName" />
+                <input [attr.aria-invalid]="!isAdult" [attr.aria-required]="true" (ngModelChange)="checkName()"
+                    autocomplete="name" spellcheck="true" id="firstName" aria-label="input firstName" pInputText
+                    lang="en" type="text" [(ngModel)]="firstName" />
             </div>
         </div>
 
@@ -22,7 +23,8 @@
                 field is required</label>
             <div>
                 <input [attr.aria-required]="true" [attr.aria-invalid]="!lastNameExistst" (ngModelChange)="checkName()"
-                    id="lastName" aria-label="input lastName" pInputText type="text" [(ngModel)]="lastName" />
+                    lang="en" spellcheck="true" autocomplete="family-name" id="lastName" aria-label="input lastName"
+                    pInputText type="text" [(ngModel)]="lastName" />
             </div>
         </div>
 
@@ -34,8 +36,8 @@
                 field is required </label>
             <div>
                 <input [attr.aria-required]="true" [attr.aria-invalid]="!emailValid" pInputText id="email"
-                    (change)="checkEmailValid(email)" aria-label="input email" pInputText type="email"
-                    [(ngModel)]="email" />
+                    spellcheck="true" autocomplete="email" (change)="checkEmailValid(email)" aria-label="input email"
+                    pInputText type="email" [(ngModel)]="email" lang="en" />
             </div>
             <label *ngIf="!emailValid"
                 [ngClass]="{'error-suggestion-one' : size == 'size1', 'error-suggestion-half' : size == 'size15', 'error-suggestion-two' : size == 'size2', }">email
@@ -50,7 +52,8 @@
                 field is required</label>
             <div>
                 <input [attr.aria-required]="true" [attr.aria-invalid]="!userNameExistst" (ngModelChange)="checkName()"
-                    id="username" aria-label="input username" pInputText type="username" [(ngModel)]="username" />
+                    autocomplete="username" spellcheck="true" id="username" aria-label="input username" pInputText
+                    type="username" [(ngModel)]="username" />
             </div>
         </div>
 
@@ -63,7 +66,7 @@
             <div>
                 <p-calendar
                     [ngClass]="{'calendar-one': size === 'size1', 'calendar-half': size === 'size15', 'calendar-two': size === 'size2'}"
-                    [attr.aria-required]="true" [attr.aria-invalid]="!isAdult" (onSelect)="checkAge(birthday)"
+                    [attr.aria-invalid]="!isAdult" [attr.aria-required]="true" (onSelect)="checkAge(birthday)"
                     #myCalendar aria-label="input birthday" name="date" [(ngModel)]="birthday"
                     [showIcon]="true"></p-calendar>
             </div>
@@ -78,16 +81,74 @@
 
         <div class="buttoncontainer">
             <div class="left">
-                <p-button
+                <p-button (onClick)="showDialog()"
                     [ngClass]="{'button-one' : size == 'size1', 'button-half' : size == 'size15', 'button-two' : size == 'size2', }"
                     pRipple aria-label="submit register form" [disabled]="!validated" label="Submit"></p-button>
             </div>
             <div class="right">
-                <a href="/"><p-button
-                        [ngClass]="{'button-one' : size == 'size1', 'button-half' : size == 'size15', 'button-two' : size == 'size2', }"
-                        router-l aria-label="cancel register form" label="Cancel"></p-button>
-                </a>
+                <p-button (click)="onSubmit('/main/AAA')"
+                    [ngClass]="{'button-one' : size == 'size1', 'button-half' : size == 'size15', 'button-two' : size == 'size2', }"
+                    router-l aria-label="cancel register form" label="Cancel"></p-button>
             </div>
         </div>
     </div>
 </div>
+
+<p-dialog tabindex="0" header="Check your " [(visible)]="visible" aria-modal="true" [modal]="true"
+    [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+    <h2>is This information correct?</h2>
+    <div class="modla">
+        <label lang="en" aria-label="firtsname"
+            [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+            Fisrtname:
+        </label>
+        <div></div>
+        <p lang="en"
+            [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+            {{firstName}}</p>
+    </div>
+    <div class="modla">
+        <label lang="en" aria-label="lastname"
+            [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+            Lastname:
+        </label>
+        <div></div>
+        <p lang="en"
+            [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+            {{lastName}}</p>
+    </div>
+    <div class="modla">
+        <label lang="en" aria-label="Email"
+            [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+            Email:
+        </label>
+        <div></div>
+        <p lang="en"
+            [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+            {{email}}</p>
+    </div>
+    <div class="modla">
+        <label lang="en" aria-label="username"
+            [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+            Username:
+        </label>
+        <div></div>
+        <p lang="en"
+            [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+            {{username}}</p>
+    </div>
+    <div class="modla">
+        <label lang="en" aria-label="birthday"
+            [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+            birthday:
+        </label>
+        <div></div>
+        <p lang="en"
+            [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">
+            {{birthday}}</p>
+    </div>
+
+    <p-button id="dialo" tabindex="0" (onClick)="onSubmit('/main/AAA')"
+        [ngClass]="{'button-one' : size == 'size1', 'button-half' : size == 'size15', 'button-two' : size == 'size2', }"
+        pRipple aria-label="submit register form" label="Submit"></p-button>
+</p-dialog>

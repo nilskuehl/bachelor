@@ -8,8 +8,9 @@
                 [ngClass]="{'error-required': size == 'size1', 'error-required-two' : size == 'size2', 'error-required-half' : size == 'size15' }">*
                 field is required</label>
             <div class="col w-full">
-                <input [attr.aria-required]="true" [attr.aria-invalid]="!firstNameExists" (ngModelChange)="checkName()"
-                    id="firstName" aria-label="input firstName" pInputText type="text" [(ngModel)]="firstName" />
+                <input autocomplete="name" [attr.aria-required]="true" [attr.aria-invalid]="!firstNameExists"
+                    (ngModelChange)="checkName()" id="firstName" aria-label="input firstName" pInputText type="text"
+                    [(ngModel)]="firstName" />
             </div>
         </div>
 
@@ -21,8 +22,9 @@
                 [ngClass]="{'error-required': size == 'size1', 'error-required-two' : size == 'size2', 'error-required-half' : size == 'size15' }">*
                 field is required</label>
             <div>
-                <input [attr.aria-required]="true" [attr.aria-invalid]="!lastNameExistst" (ngModelChange)="checkName()"
-                    id="lastName" aria-label="input lastName" pInputText type="text" [(ngModel)]="lastName" />
+                <input autocomplete="family-name" [attr.aria-required]="true" [attr.aria-invalid]="!lastNameExistst"
+                    (ngModelChange)="checkName()" id="lastName" aria-label="input lastName" pInputText type="text"
+                    [(ngModel)]="lastName" />
             </div>
         </div>
 
@@ -34,8 +36,8 @@
                 field is required </label>
             <div>
                 <input [attr.aria-required]="true" [attr.aria-invalid]="!emailValid" pInputText id="email"
-                    (change)="checkEmailValid(email)" aria-label="input email" pInputText type="email"
-                    [(ngModel)]="email" />
+                    autocomplete="email" (change)="checkEmailValid(email)" aria-label="input email" pInputText
+                    type="email" [(ngModel)]="email" />
             </div>
             <label *ngIf="!emailValid"
                 [ngClass]="{'error-suggestion-one' : size == 'size1', 'error-suggestion-half' : size == 'size15', 'error-suggestion-two' : size == 'size2', }">email
@@ -43,14 +45,15 @@
         </div>
 
         <div class="col-2">
-            <label for="email"
+            <label for="username"
                 [ngClass]="{'label' : size == 'size1', 'label-half' : size == 'size15', 'label-two' : size == 'size2' }">Username:</label>
             <label *ngIf="!userNameExistst"
                 [ngClass]="{'error-required': size == 'size1', 'error-required-two' : size == 'size2', 'error-required-half' : size == 'size15' }">*
                 field is required</label>
             <div>
                 <input [attr.aria-required]="true" [attr.aria-invalid]="!userNameExistst" (ngModelChange)="checkName()"
-                    id="username" aria-label="input username" pInputText type="username" [(ngModel)]="username" />
+                    autocomplete="username" id="username" aria-label="input username" pInputText type="username"
+                    [(ngModel)]="username" />
             </div>
         </div>
 
@@ -78,15 +81,14 @@
 
         <div class="buttoncontainer">
             <div class="left">
-                <p-button
+                <p-button (onClick)="onSubmit('/main/AA')"
                     [ngClass]="{'button-one' : size == 'size1', 'button-half' : size == 'size15', 'button-two' : size == 'size2', }"
                     pRipple aria-label="submit register form" [disabled]="!validated" label="Submit"></p-button>
             </div>
             <div class="right">
-                <a href="/"><p-button
-                        [ngClass]="{'button-one' : size == 'size1', 'button-half' : size == 'size15', 'button-two' : size == 'size2', }"
-                        router-l aria-label="cancel register form" label="Cancel"></p-button>
-                </a>
+                <p-button (onClick)="onSubmit('/main/AA')"
+                    [ngClass]="{'button-one' : size == 'size1', 'button-half' : size == 'size15', 'button-two' : size == 'size2', }"
+                    router-l aria-label="cancel register form" label="Cancel"></p-button>
             </div>
         </div>
     </div>

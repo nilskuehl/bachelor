@@ -20,6 +20,7 @@ interface RegisterProps {
 const Register: React.FC<RegisterProps> = ({ service, size, level }) => {
 
     const navigate = useNavigate()
+    const [currentLevel, setCurrentLevel] = useState<string>('');
 
     const [firstName, setfirstName] = useState('');
     const [lastname, setlastname] = useState('');
@@ -92,6 +93,11 @@ const Register: React.FC<RegisterProps> = ({ service, size, level }) => {
 
     useEffect(() => {
         document.title = 'Register A'
+        document.documentElement.lang = 'en'
+        setCurrentLevel('A')
+        service.currentLocation = "../register"
+        service.updateCurrentLevel('A')
+
     })
 
     var menu = [{}]
@@ -104,65 +110,66 @@ const Register: React.FC<RegisterProps> = ({ service, size, level }) => {
 
     return (
         <div lang='eng' title='register'>
-            <h1>Register Level A</h1>
             <div className='center'>
+                <h2>Register Level A</h2>
+
                 <div id='form'>
                     <div className='elemnt'>
                         <div className='labels' >
-                            <label tabIndex={0} aria-label='firstname' className={`${size === 'size1' ? 'label' : size === 'size2' ? 'label-two' : 'label-half'}`}>Fistname:</label>
+                            <label tabIndex={0} aria-label='firstname'>Fistname:</label>
 
-                            {!firstNameExists && <label tabIndex={0} className={`${size === 'size1' ? 'error-required' : size === 'size2' ? 'error-required-two' : 'error-required-half'}`}>* field is required</label>}
+                            {!firstNameExists && <label className='error-required' tabIndex={0} >* field is required</label>}
                         </div>
                         <div className="col w-full">
                             <div className="card flex justify-content-center">
-                                <InputText tabIndex={0} className={`${size === 'size1' ? 'p-input-one' : size === 'size2' ? 'p-input-two' : 'p-input-half'}`} role='name' aria-labelledby='input firstname' value={firstName} onChange={(e) => setfirstName(e.target.value)} />
+                                <InputText className='inpust' tabIndex={0} role='name' aria-labelledby='input firstname' value={firstName} onChange={(e) => setfirstName(e.target.value)} />
                             </div>
                         </div>
                     </div>
                     <div className='elemnt'>
                         <div className='labels' >
-                            <label tabIndex={0} aria-label='lastname' className={`${size === 'size1' ? 'label' : size === 'size2' ? 'label-two' : 'label-half'}`}>Lastname:</label>
+                            <label tabIndex={0} aria-label='lastname' >Lastname:</label>
 
-                            {!lastNameExists && <label tabIndex={0} className={`${size === 'size1' ? 'error-required' : size === 'size2' ? 'error-required-two' : 'error-required-half'}`}>* field is required</label>}
+                            {!lastNameExists && <label tabIndex={0} className='error-required' >* field is required</label>}
                         </div>
                         <div className="col w-full">
                             <div className="card flex justify-content-center">
-                                <InputText tabIndex={0} className={`${size === 'size1' ? 'p-input-one' : size === 'size2' ? 'p-input-two' : 'p-input-half'}`} role='name' aria-labelledby='input firstname' value={lastname} onChange={(e) => setlastname(e.target.value)} />
+                                <InputText className='inpust' tabIndex={0} role='name' aria-labelledby='input firstname' value={lastname} onChange={(e) => setlastname(e.target.value)} />
                             </div>
                         </div>
                     </div>
                     <div className='elemnt'>
                         <div className='labels' >
-                            <label tabIndex={0} aria-label='firstname' className={`${size === 'size1' ? 'label' : size === 'size2' ? 'label-two' : 'label-half'}`}>Username:</label>
+                            <label tabIndex={0} aria-label='firstname' >Username:</label>
 
-                            {!userNameExistst && <label tabIndex={0} className={`${size === 'size1' ? 'error-required' : size === 'size2' ? 'error-required-two' : 'error-required-half'}`}>* field is required</label>}
+                            {!userNameExistst && <label tabIndex={0} className='error-required'>* field is required</label>}
                         </div>
                         <div className="col w-full">
                             <div className="card flex justify-content-center">
-                                <InputText tabIndex={0} className={`${size === 'size1' ? 'p-input-one' : size === 'size2' ? 'p-input-two' : 'p-input-half'}`} role='name' aria-labelledby='input firstname' value={username} onChange={(e) => { setusername(e.target.value); checkName() }} />
+                                <InputText className='inpust' tabIndex={0} role='name' aria-labelledby='input firstname' value={username} onChange={(e) => { setusername(e.target.value); checkName() }} />
                             </div>
                         </div>
                     </div>
 
                     <div className='elemnt'>
                         <div className='labels' >
-                            <label tabIndex={0} aria-label='firstname' className={`${size === 'size1' ? 'label' : size === 'size2' ? 'label-two' : 'label-half'}`}>Email:</label>
+                            <label tabIndex={0} aria-label='firstname' >Email:</label>
 
-                            {!emailValid && <label tabIndex={0} className={`${size === 'size1' ? 'error-required' : size === 'size2' ? 'error-required-two' : 'error-required-half'}`}>* field is required</label>}
+                            {!emailValid && <label tabIndex={0} className='error-required'>* field is required</label>}
                         </div>
                         <div className="col w-full">
                             <div className="card flex justify-content-center">
-                                <InputText tabIndex={0} className={`${size === 'size1' ? 'p-input-one' : size === 'size2' ? 'p-input-two' : 'p-input-half'}`} role='name' aria-labelledby='input firstname' value={email} onChange={(e) => setemail(e.target.value)} />
+                                <InputText className='inpust' tabIndex={0} role='name' aria-labelledby='input firstname' value={email} onChange={(e) => setemail(e.target.value)} />
                             </div>
                         </div>
                     </div>
                     <div className='elemnt'>
                         <div className='labels' >
-                            <label tabIndex={0} aria-label='firstname' className={`${size === 'size1' ? 'label' : size === 'size2' ? 'label-two' : 'label-half'}`}>Birthday:</label>
+                            <label tabIndex={0} aria-label='firstname' >Birthday:</label>
 
-                            {!isAdult && <label tabIndex={0} className={`${size === 'size1' ? 'error-required' : size === 'size2' ? 'error-required-two' : 'error-required-half'}`}>* field is required</label>}
+                            {!isAdult && <label tabIndex={0} className='error-required'>* field is required</label>}
                         </div>
-                        <div className={`${size === 'size1' ? 'calendar-one' : size === 'size2' ? 'calendar-two' : 'calendar-half'}`}>
+                        <div className='calendar-one'>
                             <div className="card flex justify-content-center">
                                 <Calendar style={{ width: '3000px !important' }} showIcon className="cal" value={date} onChange={(e: CalendarChangeEvent) => setDate(e.value as Date | null)} />
                             </div>
@@ -170,10 +177,10 @@ const Register: React.FC<RegisterProps> = ({ service, size, level }) => {
                     </div>
                     <div className='buttonContainer'>
                         <div className='left'>
-                            <Button label='Submit' disabled={!validated}></Button>
+                            <Button label='Submit' onClick={() => navigate('main/A')} disabled={!validated}></Button>
                         </div>
                         <div className='right'>
-                            <Button label='Cancel'></Button>
+                            <Button onClick={() => navigate('main/A')} label='Cancel' id='cancelButton' aria-label='Cancel Form'></Button>
                         </div>
                     </div>
                 </div>

@@ -12,7 +12,7 @@ import { LocationService } from '../service/location.service';
 export class SubContentAAAComponent {
 
   menuItems: MenuItem[];
-  menuItem: MenuItem = { label: 'content', url: 'sub/AAA', preserveFragment: true }
+  menuItem: MenuItem = { label: 'content', url: document.location.pathname, preserveFragment: true }
   size: string;
   foreground: string;
   background: string;
@@ -23,19 +23,36 @@ export class SubContentAAAComponent {
     this.location.removeMenu();
   }
 
+  previousPath: string;
+  getPreviousPath(): string {
+    const referrerUrl: URL = new URL(document.referrer);
+    return referrerUrl.pathname;
+  }
+
 
   ngOnInit(): void {
+    this.previousPath = this.getPreviousPath();
+    console.log(this.previousPath)
     this.data.currentMessage.subscribe(message => this.size = message)
-    this.location.currentLocation = 'main';
+    this.location.currentLocation = 'sub';
     this.location.currentBc.subscribe(bc => this.menuItems = bc);
-    if (this.menuItems[this.menuItems.length - 1].url != this.menuItem.url) {
-      console.log(this.menuItems)
+    var boold = this.menuItems.find(item => item.url === "content/AAA") !== undefined
+    if (boold) {
+      this.menuItems.pop()
+      this.location.updateBc(this.menuItems)
+    }
+    var boold = this.menuItems.find(item => item.url === this.menuItem.url) !== undefined
+    if (!boold) {
       this.menuItems.push(this.menuItem)
       this.location.updateBc(this.menuItems)
     }
+
     this.data.currentForeground.subscribe(color => this.foreground = color);
     this.data.currenBackground.subscribe(color => this.background = color);
     this.data.changeLevel('AAA');
+    document.title = "Subcontent Level AAA"
+
+
 
   }
 

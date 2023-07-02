@@ -126,15 +126,15 @@ input:hover {
     font-size: 200%;
 }
 
-.button-one {
+:host ::ng-deep .button-one .p-button {
     font-size: 100% !important;
 }
 
-.button-half {
+:host ::ng-deep .button-half .p-button {
     font-size: 150% !important;
 }
 
-.button-two {
+:host ::ng-deep .button-two .p-button {
     font-size: 200% !important;
 }
 

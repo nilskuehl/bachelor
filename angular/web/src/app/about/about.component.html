@@ -1,0 +1,16 @@
+<div class="center">
+    <div class="about">
+        <h2 [ngStyle]="{ 'color': foreground, 'background-color': background  }">Very Interesting Article</h2>
+
+        <p lang="eng" [ngStyle]="{ 'color': foreground, 'background-color': background  }"
+            [ngClass]="{'about' : size == 'size1', 'about-half' : size == 'size15', 'about-two' : size == 'size2' }">
+            This Website is supposed to be an Implementation test of the WCAG 2.1 Guideline
+            It is structured as 3 in 1 Website. This means there are 3 versions of every Component and workflow.
+            Each component is supposed to achieve the full confrormance for every Conformance Level.
+            These Levels being the levels A, AA and AAA
+            For more refferences about the Specification visit <a href="https://www.w3.org/TR/WCAG21/"
+                target="_self">WCAG
+                2.1</a> official Specification from W3C
+        </p>
+    </div>
+</div>

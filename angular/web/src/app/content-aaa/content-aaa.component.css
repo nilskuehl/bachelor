@@ -1,0 +1,60 @@
+.center {
+    justify-content: center;
+    display: flex;
+}
+
+.about {
+    text-align: center;
+    padding: 50px;
+    font-size: 24px;
+    width: 640px;
+    line-height: 1.5;
+    letter-spacing: .16rem;
+    word-spacing: .12rem;
+}
+
+.about-half {
+    text-align: center;
+    padding: 50px;
+    font-size: 30px;
+    width: 640px;
+    line-height: 1.5;
+    letter-spacing: .16rem;
+    word-spacing: .12rem;
+}
+
+
+.about-two {
+    text-align: center;
+    padding: 50px;
+    font-size: 42px;
+    width: 640px;
+    line-height: 1.5;
+    letter-spacing: .16rem;
+    word-spacing: .12rem;
+}
+
+h2 {
+    margin-left: 40px;
+    font-size: 200%;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.notAnimated {
+    margin-left: 60px;
+}
+
+.animated {
+    animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

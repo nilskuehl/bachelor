@@ -28,6 +28,8 @@ import { SubContentComponent } from './sub-content/sub-content.component';
 import { SubContentAAComponent } from './sub-content-aa/sub-content-aa.component';
 import { SubContentAAAComponent } from './sub-content-aaa/sub-content-aaa.component';
 import { ColorPickerModule } from 'primeng/colorpicker';
+import { AboutComponent } from './about/about.component';
+import { DialogModule } from 'primeng/dialog';
 
 
 @NgModule({
@@ -45,6 +47,7 @@ import { ColorPickerModule } from 'primeng/colorpicker';
     SubContentComponent,
     SubContentAAComponent,
     SubContentAAAComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,8 @@ import { ColorPickerModule } from 'primeng/colorpicker';
     ButtonModule,
     BrowserAnimationsModule,
     CardModule,
-    ColorPickerModule
+    ColorPickerModule,
+    DialogModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

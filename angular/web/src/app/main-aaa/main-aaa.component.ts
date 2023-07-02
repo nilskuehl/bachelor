@@ -10,7 +10,7 @@ import { LocationService } from '../service/location.service';
   styleUrls: ['./main-aaa.component.css']
 })
 export class MainAAAComponent implements OnDestroy, OnInit {
-  menuItems: MenuItem[];
+  menuItems: MenuItem[] = [{ label: 'home', url: 'main/AAA', preserveFragment: true }];
   menuItem: MenuItem = { label: 'home', url: 'main/AAA', preserveFragment: true }
   menuHome: MenuItem;
   size: string;
@@ -38,13 +38,13 @@ export class MainAAAComponent implements OnDestroy, OnInit {
     this.data.currentMessage.subscribe(message => this.size = message)
     this.location.currentLocation = 'main';
     this.menuHome = { icon: "pi pi-home" }
-    this.location.removeMenu();
-    this.location.appendMenu(this.menuItem);
+    this.location.updateBc(this.menuItems);
     this.menuItems = this.location.breadcrumbLocation;
     this.data.currentForeground.subscribe(color => this.foreground = color);
     this.data.currenBackground.subscribe(color => this.background = color);
     this.data.changeLevel('AAA');
-
+    document.title = "Home Level A"
+    document.documentElement.lang = 'en'
   }
 
   handleClick(link: string) {

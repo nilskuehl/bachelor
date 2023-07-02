@@ -32,6 +32,9 @@ export class MainComponent implements OnInit, OnDestroy {
     this.location.appendMenu(this.menuItem);
     this.menuItems = this.location.breadcrumbLocation;
     this.data.changeLevel('A');
+    document.title = "Home Level A"
+    document.documentElement.lang = 'en'
+
 
   }
 

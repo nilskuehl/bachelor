@@ -1,5 +1,9 @@
 .App {
-  text-align: center;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex-shrink: 1;
 }
 
 * {
@@ -17,14 +21,64 @@ header {
 }
 
 footer {
-  margin-top: 20%;
   background-color: rgb(233, 232, 232);
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  margin-top: 200px;
   padding: 20px 10%;
-  width: 100%;
-  bottom: 0;
+}
+
+a:focus,
+a:focus-visible {
+  border: 1px solid blueviolet;
+  outline: 1px solid blueviolet;
+  box-shadow: 2px;
+  border-radius: 2px;
+}
+
+a {
+  padding: 2px;
+}
+
+.routers {
+  min-height: calc(100vh - 355px) !important;
+}
+
+.breadContainer {
+  display: flex;
+}
+
+.bread {
+  display: flex;
+}
+
+.breads {
+  padding: 20px;
+  display: flex;
+  border: 1px solid slategray;
+  border-radius: 2px;
+  box-shadow: 2px;
+}
+
+.block {
+  padding: 20px;
+  display: flex;
+  border-radius: 2px;
+  box-shadow: 2px;
+  height: 75px !important;
+}
+
+.breadLink {
+  padding: 0 15px;
+  font-size: 20px;
+}
+
+.breadDash {
+  font-size: 20px;
+}
+
+.breadHome {
+  padding-top: 4px;
 }
 
 nav {
@@ -37,11 +91,23 @@ nav {
   justify-content: center;
 }
 
-
 .navLinks {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+.vc {
+  position: relative;
+  width: 20px;
+  padding: 2px;
+}
+
+.colorPickerDiv {
+  width: 20px;
+  display: flex;
+  padding: 5px;
+  flex-direction: column;
 }
 
 .navLinks li {
@@ -69,8 +135,6 @@ p-button {
 .label-two {
   font-size: 200%;
 }
-
-
 
 .navLinks {
   list-style: none;

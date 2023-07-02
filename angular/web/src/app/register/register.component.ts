@@ -34,6 +34,10 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.data.currentMessage.subscribe(message => this.size = message);
     this.location.currentLocation = 'register';
+    document.title = "Register Level A"
+    document.documentElement.lang = 'en'
+    this.data.changeLevel('AA');
+
   }
 
   validate(): boolean {
@@ -102,13 +106,7 @@ export class RegisterComponent implements OnInit {
     this.validate()
   }
 
-  onSubmit() {
-    // Hier kannst du die Registrierungslogik implementieren
-    // Zum Beispiel: Senden der Daten an einen Server
-    console.log('Form submitted!');
-    console.log('Vorname:', this.firstName);
-    console.log('Nachname:', this.lastName);
-    console.log('E-Mail:', this.email);
-    console.log('Geburtstag:', this.birthday);
+  onSubmit(url: string) {
+    this.router.navigate([url])
   }
 }

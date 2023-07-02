@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LocationService } from '../service/location.service';
 import { DataService } from '../service/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-aaa',
@@ -24,7 +25,14 @@ export class RegisterAAAComponent implements OnInit {
 
   size: string;
 
-  constructor(private data: DataService, private location: LocationService) {
+  visible: boolean = false;
+
+  showDialog() {
+    this.visible = true;
+    document.getElementById("dialo")?.focus()
+  }
+
+  constructor(private data: DataService, private location: LocationService, private router: Router) {
     this.firstName = '';
     this.lastName = '';
     this.username = '';
@@ -35,6 +43,11 @@ export class RegisterAAAComponent implements OnInit {
   ngOnInit(): void {
     this.data.currentMessage.subscribe(message => this.size = message);
     this.location.currentLocation = 'register';
+    document.title = "Register Level AAA"
+    document.documentElement.lang = 'en'
+    this.data.changeLevel('AA');
+
+
   }
 
   validate(): boolean {
@@ -88,14 +101,8 @@ export class RegisterAAAComponent implements OnInit {
     this.validate()
   }
 
-  onSubmit() {
-    // Hier kannst du die Registrierungslogik implementieren
-    // Zum Beispiel: Senden der Daten an einen Server
-    console.log('Form submitted!');
-    console.log('Vorname:', this.firstName);
-    console.log('Nachname:', this.lastName);
-    console.log('E-Mail:', this.email);
-    console.log('Geburtstag:', this.birthday);
+  onSubmit(url: string) {
+    this.router.navigate([url])
   }
 
 }
